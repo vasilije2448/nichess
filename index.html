@@ -1,0 +1,382 @@
+<!DOCTYPE html><html lang="en"><head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="anonymous">
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap">
+
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="description" content="Play Nichess, a free and open source game like chess where pieces have special abilities and health points.">
+    <meta property="og:title" content="Nichess">
+    <meta property="og:description" content="Play Nichess, a free and open source game like chess where pieces have special abilities and health points.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.nichess.org/">
+    <meta property="og:image" content="https://www.nichess.org/pwa-512x512.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png" sizes="180x180">
+    <title>Nichess</title>
+    <script type="module" crossorigin="" src="/assets/index-BKEKGDls.js"></script>
+    <link rel="stylesheet" crossorigin="" href="/assets/index-CvhIqpyi.css">
+  <link rel="manifest" href="/manifest.webmanifest"><style id="vuetify-theme-stylesheet">:root {
+      color-scheme: dark;
+    }
+    :root {
+      --v-theme-background: 18,18,18;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 33,33,33;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 204,191,214;
+      --v-theme-surface-bright-overlay-multiplier: 2;
+      --v-theme-surface-light: 66,66,66;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 200,200,200;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 0,0,0;
+      --v-theme-primary: 33,150,243;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 39,124,193;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 84,182,178;
+      --v-theme-secondary-overlay-multiplier: 2;
+      --v-theme-secondary-darken-1: 72,169,166;
+      --v-theme-secondary-darken-1-overlay-multiplier: 2;
+      --v-theme-error: 207,102,121;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 2;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 2;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 2;
+      --v-theme-on-background: 255,255,255;
+      --v-theme-on-surface: 255,255,255;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 255,255,255;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 255, 255, 255;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 1;
+      --v-medium-emphasis-opacity: 0.7;
+      --v-disabled-opacity: 0.5;
+      --v-idle-opacity: 0.1;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.16;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 66, 66, 66;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 52, 52, 52;
+      --v-theme-on-code: 204, 204, 204;
+    }
+    .v-theme--light {
+      color-scheme: normal;
+      --v-theme-background: 255,255,255;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 255,255,255;
+      --v-theme-surface-bright-overlay-multiplier: 1;
+      --v-theme-surface-light: 238,238,238;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 24,103,192;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 31,85,146;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 72,169,166;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 176,0,32;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 238, 238, 238;
+      --v-theme-on-kbd: 0, 0, 0;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+    }
+    .v-theme--dark {
+      color-scheme: dark;
+      --v-theme-background: 18,18,18;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 33,33,33;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 204,191,214;
+      --v-theme-surface-bright-overlay-multiplier: 2;
+      --v-theme-surface-light: 66,66,66;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 200,200,200;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 0,0,0;
+      --v-theme-primary: 33,150,243;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 39,124,193;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 84,182,178;
+      --v-theme-secondary-overlay-multiplier: 2;
+      --v-theme-secondary-darken-1: 72,169,166;
+      --v-theme-secondary-darken-1-overlay-multiplier: 2;
+      --v-theme-error: 207,102,121;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 2;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 2;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 2;
+      --v-theme-on-background: 255,255,255;
+      --v-theme-on-surface: 255,255,255;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 255,255,255;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 255, 255, 255;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 1;
+      --v-medium-emphasis-opacity: 0.7;
+      --v-disabled-opacity: 0.5;
+      --v-idle-opacity: 0.1;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.16;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 66, 66, 66;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 52, 52, 52;
+      --v-theme-on-code: 204, 204, 204;
+    }
+    .bg-background {
+      --v-theme-overlay-multiplier: var(--v-theme-background-overlay-multiplier);
+      background-color: rgb(var(--v-theme-background)) !important;
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .bg-surface {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface)) !important;
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .bg-surface-bright {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-bright-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-bright)) !important;
+      color: rgb(var(--v-theme-on-surface-bright)) !important;
+    }
+    .bg-surface-light {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-light-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-light)) !important;
+      color: rgb(var(--v-theme-on-surface-light)) !important;
+    }
+    .bg-surface-variant {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-variant-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-variant)) !important;
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .bg-primary {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary)) !important;
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .bg-primary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .bg-secondary {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary)) !important;
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .bg-secondary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .bg-error {
+      --v-theme-overlay-multiplier: var(--v-theme-error-overlay-multiplier);
+      background-color: rgb(var(--v-theme-error)) !important;
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .bg-info {
+      --v-theme-overlay-multiplier: var(--v-theme-info-overlay-multiplier);
+      background-color: rgb(var(--v-theme-info)) !important;
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .bg-success {
+      --v-theme-overlay-multiplier: var(--v-theme-success-overlay-multiplier);
+      background-color: rgb(var(--v-theme-success)) !important;
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .bg-warning {
+      --v-theme-overlay-multiplier: var(--v-theme-warning-overlay-multiplier);
+      background-color: rgb(var(--v-theme-warning)) !important;
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+    .text-background {
+      color: rgb(var(--v-theme-background)) !important;
+    }
+    .border-background {
+      --v-border-color: var(--v-theme-background);
+    }
+    .text-surface {
+      color: rgb(var(--v-theme-surface)) !important;
+    }
+    .border-surface {
+      --v-border-color: var(--v-theme-surface);
+    }
+    .text-surface-bright {
+      color: rgb(var(--v-theme-surface-bright)) !important;
+    }
+    .border-surface-bright {
+      --v-border-color: var(--v-theme-surface-bright);
+    }
+    .text-surface-light {
+      color: rgb(var(--v-theme-surface-light)) !important;
+    }
+    .border-surface-light {
+      --v-border-color: var(--v-theme-surface-light);
+    }
+    .text-surface-variant {
+      color: rgb(var(--v-theme-surface-variant)) !important;
+    }
+    .border-surface-variant {
+      --v-border-color: var(--v-theme-surface-variant);
+    }
+    .on-surface-variant {
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .text-primary {
+      color: rgb(var(--v-theme-primary)) !important;
+    }
+    .border-primary {
+      --v-border-color: var(--v-theme-primary);
+    }
+    .text-primary-darken-1 {
+      color: rgb(var(--v-theme-primary-darken-1)) !important;
+    }
+    .border-primary-darken-1 {
+      --v-border-color: var(--v-theme-primary-darken-1);
+    }
+    .text-secondary {
+      color: rgb(var(--v-theme-secondary)) !important;
+    }
+    .border-secondary {
+      --v-border-color: var(--v-theme-secondary);
+    }
+    .text-secondary-darken-1 {
+      color: rgb(var(--v-theme-secondary-darken-1)) !important;
+    }
+    .border-secondary-darken-1 {
+      --v-border-color: var(--v-theme-secondary-darken-1);
+    }
+    .text-error {
+      color: rgb(var(--v-theme-error)) !important;
+    }
+    .border-error {
+      --v-border-color: var(--v-theme-error);
+    }
+    .text-info {
+      color: rgb(var(--v-theme-info)) !important;
+    }
+    .border-info {
+      --v-border-color: var(--v-theme-info);
+    }
+    .text-success {
+      color: rgb(var(--v-theme-success)) !important;
+    }
+    .border-success {
+      --v-border-color: var(--v-theme-success);
+    }
+    .text-warning {
+      color: rgb(var(--v-theme-warning)) !important;
+    }
+    .border-warning {
+      --v-border-color: var(--v-theme-warning);
+    }
+    .on-background {
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .on-surface {
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .on-surface-bright {
+      color: rgb(var(--v-theme-on-surface-bright)) !important;
+    }
+    .on-surface-light {
+      color: rgb(var(--v-theme-on-surface-light)) !important;
+    }
+    .on-primary {
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .on-primary-darken-1 {
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .on-secondary {
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .on-secondary-darken-1 {
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .on-error {
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .on-info {
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .on-success {
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .on-warning {
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+</style><link rel="modulepreload" as="script" crossorigin="" href="/assets/default-1jV0i9B_.js"><link rel="stylesheet" crossorigin="" href="/assets/default-vDqa__t1.css"><link rel="modulepreload" as="script" crossorigin="" href="/assets/index-Cxiq1GOD.js"><link rel="stylesheet" crossorigin="" href="/assets/index-Dkvmuy5K.css"><link rel="canonical" href="https://www.nichess.org/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Nichess"><meta name="twitter:description" content="Play Nichess, a free and open source game like chess where pieces have special abilities and health points."><meta name="twitter:image" content="https://www.nichess.org/pwa-512x512.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Nichess","url":"https://www.nichess.org/","description":"A free and open source game like chess where pieces have special abilities and health points.","potentialAction":{"@type":"SearchAction","target":"https://www.nichess.org/"}}</script></head>
+  <body>
+    <div id="app" data-v-app=""><div data-v-8d89642c="" class="v-application v-theme--dark v-layout v-layout--full-height v-locale--is-ltr"><div class="v-application__wrap"><header data-v-8d89642c="" class="v-toolbar v-toolbar--density-default bg-transparent elevation-0 v-theme--dark v-locale--is-ltr v-app-bar site-app-bar" app="" style="top: 0px; z-index: 1008; transform: translateY(0px); position: fixed; left: 0px; width: calc(100% + 0px);"><!----><div class="v-toolbar__content" style="height: 64px;"><!----><!----><div data-v-8d89642c="" class="v-container v-locale--is-ltr nav-container d-flex align-center"><button data-v-8d89642c="" type="button" class="v-btn v-btn--icon v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text mobile-menu-button d-sm-none v-app-bar-nav-icon" aria-label="Open navigation"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator=""><i class="v-icon notranslate v-theme--dark v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path></svg></i></span><!----><!----></button><a data-v-8d89642c="" href="/" class="router-link-active router-link-exact-active brand-link" aria-current="page">Nichess</a><div data-v-8d89642c="" class="desktop-nav d-none d-sm-flex ml-auto"><button data-v-8d89642c="" type="button" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text nav-link"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">Play</span><!----><!----></button><!----><!----><a data-v-8d89642c="" href="/faq" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text nav-link"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">FAQ</span><!----><!----></a><a data-v-8d89642c="" href="/rules" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text nav-link"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">Rules</span><!----><!----></a><a data-v-8d89642c="" href="/tools" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text nav-link"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">Tools</span><!----><!----></a><a data-v-8d89642c="" href="/nostr" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text nav-link"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">Nostr</span><!----><!----></a><a data-v-8d89642c="" href="/donate" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text nav-link donate-link"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">Donate</span><!----><!----></a></div></div><!----></div><!----></header><nav class="v-navigation-drawer v-navigation-drawer--left v-navigation-drawer--temporary v-theme--dark v-navigation-drawer--mobile mobile-drawer d-sm-none" data-v-8d89642c="" style="left: 0px; z-index: 1006; transform: translateX(-256px); position: fixed; height: calc(100% - 64px); top: 64px; bottom: 0px; width: 256px;"><!----><!----><div class="v-navigation-drawer__content"><div data-v-8d89642c="" class="v-list v-theme--dark bg-transparent v-list--density-default v-list--one-line mobile-nav-list" tabindex="0" role="list"><div data-v-8d89642c="" tabindex="-2" class="v-list-item v-list-item--link v-theme--dark v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text mobile-play-item" role="listitem"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!----><div class="v-list-item__content" data-no-activator=""><div class="v-list-item-title">Play</div><!----><!----></div><!----></div><a data-v-8d89642c="" href="/faq" tabindex="-2" class="v-list-item v-list-item--link v-theme--dark v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text mobile-nav-item" role="link"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!----><div class="v-list-item__content" data-no-activator=""><div class="v-list-item-title">FAQ</div><!----><!----></div><!----></a><a data-v-8d89642c="" href="/rules" tabindex="-2" class="v-list-item v-list-item--link v-theme--dark v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text mobile-nav-item" role="link"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!----><div class="v-list-item__content" data-no-activator=""><div class="v-list-item-title">Rules</div><!----><!----></div><!----></a><a data-v-8d89642c="" href="/tools" tabindex="-2" class="v-list-item v-list-item--link v-theme--dark v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text mobile-nav-item" role="link"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!----><div class="v-list-item__content" data-no-activator=""><div class="v-list-item-title">Tools</div><!----><!----></div><!----></a><a data-v-8d89642c="" href="/nostr" tabindex="-2" class="v-list-item v-list-item--link v-theme--dark v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text mobile-nav-item" role="link"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!----><div class="v-list-item__content" data-no-activator=""><div class="v-list-item-title">Nostr</div><!----><!----></div><!----></a><a data-v-8d89642c="" href="/donate" tabindex="-2" class="v-list-item v-list-item--link v-theme--dark v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text mobile-nav-item mobile-donate-item" role="link"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!----><div class="v-list-item__content" data-no-activator=""><div class="v-list-item-title">Donate</div><!----><!----></div><!----></a></div></div><!----></nav><!----><main data-v-8d89642c="" class="v-main" style="--v-layout-left: 0px; --v-layout-right: 0px; --v-layout-top: 64px; --v-layout-bottom: 40px;"><main data-v-6a223192="" class="home-page"><!----><!----><section data-v-6a223192="" class="hero" aria-labelledby="home-title"><h1 data-v-6a223192="" id="home-title">Nichess</h1><p data-v-6a223192="">Chess where pieces have special abilities and health points.</p><div data-v-6a223192="" class="hero-actions"><button data-v-6a223192="" class="primary-action" type="button"> Play against AI </button><a data-v-6a223192="" href="/rules" class="secondary-action"> Rules </a></div></section><section data-v-6a223192="" class="info-grid" aria-label="Nichess links and information"><article data-v-6a223192="" class="info-panel"><h2 data-v-6a223192="">Peer-to-peer</h2><p data-v-6a223192=""> Play against someone via <a data-v-6a223192="" href="/nostr" class="site-link">Nostr</a> or <a data-v-6a223192="" href="/urbit" class="site-link">Urbit</a>. </p></article><article class="info-panel" data-v-6a223192=""><h2 data-v-6a223192="">Social</h2><p data-v-6a223192=""> Follow us on <a class="site-link" href="https://www.x.com/nichessgame" data-v-6a223192="">X</a> and <a class="site-link" href="https://www.youtube.com/@nichessgame" data-v-6a223192="">YouTube</a>. </p><p data-v-6a223192=""> Email: contact@nichess.org </p></article><article class="info-panel" data-v-6a223192=""><h2 data-v-6a223192="">Free and Open Source</h2><p data-v-6a223192=""> All the code and AI models are available on our <a class="site-link" href="https://github.com/nichessgame" data-v-6a223192="">GitHub page</a> under FOSS licenses. </p></article><article class="info-panel" data-v-6a223192=""><h2 data-v-6a223192="">AI Games</h2><p data-v-6a223192=""><a class="site-link" href="https://youtube.com/playlist?list=PLN0TnHkszmgQSnFrvF_ANIzX8GmDD5GFR" data-v-6a223192="">Watch</a> our AI play against itself. </p><p data-v-6a223192=""> This is currently the best way to see what the game is like if both sides play well. </p></article></section></main><footer data-v-8b9add76="" data-v-6a223192="" class="v-footer v-theme--dark d-flex align-center justify-center" style="bottom: 0px; z-index: 1004; transform: translateY(0px); position: fixed; height: 40px; left: 0px; width: calc(100% + 0px);"><a data-v-8b9add76="" class="d-inline-block mx-2 social-link" href="https://www.youtube.com/@nichessgame" rel="noopener noreferrer" target="_blank" title="Nichess YouTube"><i data-v-8b9add76="" class="v-icon notranslate v-theme--dark" aria-hidden="true" style="font-size: 16px; height: 16px; width: 16px;"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"></path></svg></i></a><a data-v-8b9add76="" class="d-inline-block mx-2 social-link" href="https://x.com/nichessgame" rel="noopener noreferrer" target="_blank" title="Nichess X"><i data-v-8b9add76="" class="v-icon notranslate v-theme--dark" aria-hidden="true" style="font-size: 16px; height: 16px; width: 16px;"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M2.04875 3.00002L9.77052 13.3248L1.99998 21.7192H3.74882L10.5519 14.3697L16.0486 21.7192H22L13.8437 10.8137L21.0765 3.00002H19.3277L13.0624 9.76874L8.0001 3.00002H2.04875ZM4.62054 4.28821H7.35461L19.4278 20.4308H16.6937L4.62054 4.28821Z"></path></svg></i></a><a data-v-8b9add76="" class="d-inline-block mx-2 social-link" href="https://github.com/nichessgame" rel="noopener noreferrer" target="_blank" title="Nichess GitHub"><i data-v-8b9add76="" class="v-icon notranslate v-theme--dark" aria-hidden="true" style="font-size: 16px; height: 16px; width: 16px;"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path></svg></i></a></footer></main></div></div></div>
+  
+
+</body></html>

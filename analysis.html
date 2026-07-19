@@ -1,0 +1,382 @@
+<!DOCTYPE html><html lang="en"><head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="anonymous">
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap">
+
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="description" content="Analyze Nichess positions with AI.">
+    <meta property="og:title" content="Analysis">
+    <meta property="og:description" content="A game like chess where pieces have special abilities and health points.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.nichess.org/analysis">
+    <meta property="og:image" content="https://www.nichess.org/pwa-512x512.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png" sizes="180x180">
+    <title>Analysis</title>
+    <script type="module" crossorigin="" src="/assets/index-BKEKGDls.js"></script>
+    <link rel="stylesheet" crossorigin="" href="/assets/index-CvhIqpyi.css">
+  <link rel="manifest" href="/manifest.webmanifest"><style id="vuetify-theme-stylesheet">:root {
+      color-scheme: dark;
+    }
+    :root {
+      --v-theme-background: 18,18,18;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 33,33,33;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 204,191,214;
+      --v-theme-surface-bright-overlay-multiplier: 2;
+      --v-theme-surface-light: 66,66,66;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 200,200,200;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 0,0,0;
+      --v-theme-primary: 33,150,243;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 39,124,193;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 84,182,178;
+      --v-theme-secondary-overlay-multiplier: 2;
+      --v-theme-secondary-darken-1: 72,169,166;
+      --v-theme-secondary-darken-1-overlay-multiplier: 2;
+      --v-theme-error: 207,102,121;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 2;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 2;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 2;
+      --v-theme-on-background: 255,255,255;
+      --v-theme-on-surface: 255,255,255;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 255,255,255;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 255, 255, 255;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 1;
+      --v-medium-emphasis-opacity: 0.7;
+      --v-disabled-opacity: 0.5;
+      --v-idle-opacity: 0.1;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.16;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 66, 66, 66;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 52, 52, 52;
+      --v-theme-on-code: 204, 204, 204;
+    }
+    .v-theme--light {
+      color-scheme: normal;
+      --v-theme-background: 255,255,255;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 255,255,255;
+      --v-theme-surface-bright-overlay-multiplier: 1;
+      --v-theme-surface-light: 238,238,238;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 24,103,192;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 31,85,146;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 72,169,166;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 176,0,32;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 238, 238, 238;
+      --v-theme-on-kbd: 0, 0, 0;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+    }
+    .v-theme--dark {
+      color-scheme: dark;
+      --v-theme-background: 18,18,18;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 33,33,33;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 204,191,214;
+      --v-theme-surface-bright-overlay-multiplier: 2;
+      --v-theme-surface-light: 66,66,66;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 200,200,200;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 0,0,0;
+      --v-theme-primary: 33,150,243;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 39,124,193;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 84,182,178;
+      --v-theme-secondary-overlay-multiplier: 2;
+      --v-theme-secondary-darken-1: 72,169,166;
+      --v-theme-secondary-darken-1-overlay-multiplier: 2;
+      --v-theme-error: 207,102,121;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 2;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 2;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 2;
+      --v-theme-on-background: 255,255,255;
+      --v-theme-on-surface: 255,255,255;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 255,255,255;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 255, 255, 255;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 1;
+      --v-medium-emphasis-opacity: 0.7;
+      --v-disabled-opacity: 0.5;
+      --v-idle-opacity: 0.1;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.16;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 66, 66, 66;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 52, 52, 52;
+      --v-theme-on-code: 204, 204, 204;
+    }
+    .bg-background {
+      --v-theme-overlay-multiplier: var(--v-theme-background-overlay-multiplier);
+      background-color: rgb(var(--v-theme-background)) !important;
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .bg-surface {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface)) !important;
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .bg-surface-bright {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-bright-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-bright)) !important;
+      color: rgb(var(--v-theme-on-surface-bright)) !important;
+    }
+    .bg-surface-light {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-light-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-light)) !important;
+      color: rgb(var(--v-theme-on-surface-light)) !important;
+    }
+    .bg-surface-variant {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-variant-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-variant)) !important;
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .bg-primary {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary)) !important;
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .bg-primary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .bg-secondary {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary)) !important;
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .bg-secondary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .bg-error {
+      --v-theme-overlay-multiplier: var(--v-theme-error-overlay-multiplier);
+      background-color: rgb(var(--v-theme-error)) !important;
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .bg-info {
+      --v-theme-overlay-multiplier: var(--v-theme-info-overlay-multiplier);
+      background-color: rgb(var(--v-theme-info)) !important;
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .bg-success {
+      --v-theme-overlay-multiplier: var(--v-theme-success-overlay-multiplier);
+      background-color: rgb(var(--v-theme-success)) !important;
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .bg-warning {
+      --v-theme-overlay-multiplier: var(--v-theme-warning-overlay-multiplier);
+      background-color: rgb(var(--v-theme-warning)) !important;
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+    .text-background {
+      color: rgb(var(--v-theme-background)) !important;
+    }
+    .border-background {
+      --v-border-color: var(--v-theme-background);
+    }
+    .text-surface {
+      color: rgb(var(--v-theme-surface)) !important;
+    }
+    .border-surface {
+      --v-border-color: var(--v-theme-surface);
+    }
+    .text-surface-bright {
+      color: rgb(var(--v-theme-surface-bright)) !important;
+    }
+    .border-surface-bright {
+      --v-border-color: var(--v-theme-surface-bright);
+    }
+    .text-surface-light {
+      color: rgb(var(--v-theme-surface-light)) !important;
+    }
+    .border-surface-light {
+      --v-border-color: var(--v-theme-surface-light);
+    }
+    .text-surface-variant {
+      color: rgb(var(--v-theme-surface-variant)) !important;
+    }
+    .border-surface-variant {
+      --v-border-color: var(--v-theme-surface-variant);
+    }
+    .on-surface-variant {
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .text-primary {
+      color: rgb(var(--v-theme-primary)) !important;
+    }
+    .border-primary {
+      --v-border-color: var(--v-theme-primary);
+    }
+    .text-primary-darken-1 {
+      color: rgb(var(--v-theme-primary-darken-1)) !important;
+    }
+    .border-primary-darken-1 {
+      --v-border-color: var(--v-theme-primary-darken-1);
+    }
+    .text-secondary {
+      color: rgb(var(--v-theme-secondary)) !important;
+    }
+    .border-secondary {
+      --v-border-color: var(--v-theme-secondary);
+    }
+    .text-secondary-darken-1 {
+      color: rgb(var(--v-theme-secondary-darken-1)) !important;
+    }
+    .border-secondary-darken-1 {
+      --v-border-color: var(--v-theme-secondary-darken-1);
+    }
+    .text-error {
+      color: rgb(var(--v-theme-error)) !important;
+    }
+    .border-error {
+      --v-border-color: var(--v-theme-error);
+    }
+    .text-info {
+      color: rgb(var(--v-theme-info)) !important;
+    }
+    .border-info {
+      --v-border-color: var(--v-theme-info);
+    }
+    .text-success {
+      color: rgb(var(--v-theme-success)) !important;
+    }
+    .border-success {
+      --v-border-color: var(--v-theme-success);
+    }
+    .text-warning {
+      color: rgb(var(--v-theme-warning)) !important;
+    }
+    .border-warning {
+      --v-border-color: var(--v-theme-warning);
+    }
+    .on-background {
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .on-surface {
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .on-surface-bright {
+      color: rgb(var(--v-theme-on-surface-bright)) !important;
+    }
+    .on-surface-light {
+      color: rgb(var(--v-theme-on-surface-light)) !important;
+    }
+    .on-primary {
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .on-primary-darken-1 {
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .on-secondary {
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .on-secondary-darken-1 {
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .on-error {
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .on-info {
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .on-success {
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .on-warning {
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+</style><link rel="modulepreload" as="script" crossorigin="" href="/assets/default-1jV0i9B_.js"><link rel="stylesheet" crossorigin="" href="/assets/default-vDqa__t1.css"><link rel="modulepreload" as="script" crossorigin="" href="/assets/analysis-u1ZvuG31.js"><link rel="modulepreload" as="script" crossorigin="" href="/assets/BoardSettingsButton-CHaW6fV7.js"><link rel="stylesheet" crossorigin="" href="/assets/BoardSettingsButton-BQklVlCc.css"><link rel="modulepreload" as="script" crossorigin="" href="/assets/agent_cache-BCy93nUV.js"><link rel="modulepreload" as="script" crossorigin="" href="/assets/VTabs-sRbYIL4Y.js"><link rel="stylesheet" crossorigin="" href="/assets/VTabs-BXXBHhTq.css"><link rel="modulepreload" as="script" crossorigin="" href="/assets/nichess-D2jC1SoT.js"><link rel="stylesheet" crossorigin="" href="/assets/analysis-QIT1cgi-.css"></head>
+  <body>
+    <div id="app" data-v-app=""><div data-v-8d89642c="" class="v-application v-theme--dark v-layout v-layout--full-height v-locale--is-ltr"><div class="v-application__wrap"><header data-v-8d89642c="" class="v-toolbar v-toolbar--density-default bg-transparent elevation-0 v-theme--dark v-locale--is-ltr v-app-bar site-app-bar" app="" style="top: 0px; z-index: 1006; transform: translateY(0px); position: fixed; left: 0px; width: calc(100% + 0px);"><!----><div class="v-toolbar__content" style="height: 64px;"><!----><!----><div data-v-8d89642c="" class="v-container v-locale--is-ltr nav-container d-flex align-center"><button data-v-8d89642c="" type="button" class="v-btn v-btn--icon v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text mobile-menu-button d-sm-none v-app-bar-nav-icon" aria-label="Open navigation"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator=""><i class="v-icon notranslate v-theme--dark v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path></svg></i></span><!----><!----></button><a data-v-8d89642c="" href="/" class="brand-link">Nichess</a><div data-v-8d89642c="" class="desktop-nav d-none d-sm-flex ml-auto"><button data-v-8d89642c="" type="button" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text nav-link"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">Play</span><!----><!----></button><!----><!----><a data-v-8d89642c="" href="/faq" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text nav-link"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">FAQ</span><!----><!----></a><a data-v-8d89642c="" href="/rules" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text nav-link"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">Rules</span><!----><!----></a><a data-v-8d89642c="" href="/tools" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text nav-link"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">Tools</span><!----><!----></a><a data-v-8d89642c="" href="/nostr" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text nav-link"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">Nostr</span><!----><!----></a><a data-v-8d89642c="" href="/donate" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text nav-link donate-link"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">Donate</span><!----><!----></a></div></div><!----></div><!----></header><nav class="v-navigation-drawer v-navigation-drawer--left v-navigation-drawer--temporary v-theme--dark v-navigation-drawer--mobile mobile-drawer d-sm-none" data-v-8d89642c="" style="left: 0px; z-index: 1004; transform: translateX(-256px); position: fixed; height: calc(100% - 64px); top: 64px; bottom: 0px; width: 256px;"><!----><!----><div class="v-navigation-drawer__content"><div data-v-8d89642c="" class="v-list v-theme--dark bg-transparent v-list--density-default v-list--one-line mobile-nav-list" tabindex="0" role="list"><div data-v-8d89642c="" tabindex="-2" class="v-list-item v-list-item--link v-theme--dark v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text mobile-play-item" role="listitem"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!----><div class="v-list-item__content" data-no-activator=""><div class="v-list-item-title">Play</div><!----><!----></div><!----></div><a data-v-8d89642c="" href="/faq" tabindex="-2" class="v-list-item v-list-item--link v-theme--dark v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text mobile-nav-item" role="link"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!----><div class="v-list-item__content" data-no-activator=""><div class="v-list-item-title">FAQ</div><!----><!----></div><!----></a><a data-v-8d89642c="" href="/rules" tabindex="-2" class="v-list-item v-list-item--link v-theme--dark v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text mobile-nav-item" role="link"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!----><div class="v-list-item__content" data-no-activator=""><div class="v-list-item-title">Rules</div><!----><!----></div><!----></a><a data-v-8d89642c="" href="/tools" tabindex="-2" class="v-list-item v-list-item--link v-theme--dark v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text mobile-nav-item" role="link"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!----><div class="v-list-item__content" data-no-activator=""><div class="v-list-item-title">Tools</div><!----><!----></div><!----></a><a data-v-8d89642c="" href="/nostr" tabindex="-2" class="v-list-item v-list-item--link v-theme--dark v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text mobile-nav-item" role="link"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!----><div class="v-list-item__content" data-no-activator=""><div class="v-list-item-title">Nostr</div><!----><!----></div><!----></a><a data-v-8d89642c="" href="/donate" tabindex="-2" class="v-list-item v-list-item--link v-theme--dark v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text mobile-nav-item mobile-donate-item" role="link"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!----><div class="v-list-item__content" data-no-activator=""><div class="v-list-item-title">Donate</div><!----><!----></div><!----></a></div></div><!----></nav><!----><main data-v-8d89642c="" class="v-main" style="--v-layout-left: 0px; --v-layout-right: 0px; --v-layout-top: 64px; --v-layout-bottom: 0px;"><div data-v-2e845ccd="" class="v-container v-locale--is-ltr pa-0" style="max-width: clamp(864px, 80vh, 1920px);"><div data-v-2e845ccd="" class="chessboard-container"><section data-v-2e845ccd="" class="main-wrap mt-10"><div class="main-board"><!----><div class="cg-wrap orientation-white manipulable"><cg-container style="width: 480px; height: 480px;"><cg-board style="font-size: 24px;"><piece class="white rook" style="transform: translate(0px, 420px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">60</div></piece><piece class="white knight" style="transform: translate(60px, 420px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">60</div></piece><piece class="white bishop" style="transform: translate(120px, 420px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">10</div></piece><piece class="white queen" style="transform: translate(180px, 420px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">10</div></piece><piece class="white king" style="transform: translate(240px, 420px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">10</div></piece><piece class="white bishop" style="transform: translate(300px, 420px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">10</div></piece><piece class="white knight" style="transform: translate(360px, 420px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">60</div></piece><piece class="white rook" style="transform: translate(420px, 420px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">60</div></piece><piece class="white pawn" style="transform: translate(0px, 360px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">30</div></piece><piece class="white pawn" style="transform: translate(60px, 360px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">30</div></piece><piece class="white pawn" style="transform: translate(120px, 360px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">30</div></piece><piece class="white pawn" style="transform: translate(180px, 360px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">30</div></piece><piece class="white pawn" style="transform: translate(240px, 360px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">30</div></piece><piece class="white pawn" style="transform: translate(300px, 360px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">30</div></piece><piece class="white pawn" style="transform: translate(360px, 360px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">30</div></piece><piece class="white pawn" style="transform: translate(420px, 360px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">30</div></piece><piece class="black pawn" style="transform: translate(0px, 60px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">30</div></piece><piece class="black pawn" style="transform: translate(60px, 60px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">30</div></piece><piece class="black pawn" style="transform: translate(120px, 60px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">30</div></piece><piece class="black pawn" style="transform: translate(180px, 60px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">30</div></piece><piece class="black pawn" style="transform: translate(240px, 60px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">30</div></piece><piece class="black pawn" style="transform: translate(300px, 60px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">30</div></piece><piece class="black pawn" style="transform: translate(360px, 60px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">30</div></piece><piece class="black pawn" style="transform: translate(420px, 60px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">30</div></piece><piece class="black rook" style="transform: translate(0px, 0px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">60</div></piece><piece class="black knight" style="transform: translate(60px, 0px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">60</div></piece><piece class="black bishop" style="transform: translate(120px, 0px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">10</div></piece><piece class="black queen" style="transform: translate(180px, 0px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">10</div></piece><piece class="black king" style="transform: translate(240px, 0px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">10</div></piece><piece class="black bishop" style="transform: translate(300px, 0px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">10</div></piece><piece class="black knight" style="transform: translate(360px, 0px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">60</div></piece><piece class="black rook" style="transform: translate(420px, 0px);"><div class="cg-health-points" style="position: absolute; box-sizing: border-box; display: block; border: 0px; background: transparent; font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: 0px; text-align: center; box-shadow: none; pointer-events: none; left: 3%; top: 4%; color: rgb(242, 201, 76); font-size: 0.94em; font-weight: 900; text-shadow: rgba(70, 45, 0, 0.76) 0px -0.032em 0px, rgba(70, 45, 0, 0.76) -0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0.032em 0px 0px, rgba(70, 45, 0, 0.76) 0px 0.032em 0px, rgba(65, 42, 0, 0.68) 0px 0.052em 0.038em; -webkit-font-smoothing: antialiased;">60</div></piece></cg-board><svg class="cg-shapes" viewBox="-4 -4 8 8" preserveAspectRatio="xMidYMid slice"><defs><filter id="cg-filter-blur"><feGaussianBlur stdDeviation="0.022"></feGaussianBlur></filter></defs><g></g></svg><svg class="cg-custom-svgs" viewBox="-3.5 -3.5 8 8" preserveAspectRatio="xMidYMid slice"><g></g></svg><cg-auto-pieces></cg-auto-pieces><piece class="ghost" style="visibility: hidden;"></piece></cg-container></div></div></section></div><div data-v-2e845ccd="" class="control-row mt-2 mt-sm-4"><div data-v-2e845ccd="" class="control-row-left"></div><div data-v-2e845ccd="" class="control-row-center"><button data-v-2e845ccd="" type="button" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-flat board-action-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator=""><i data-v-2e845ccd="" class="v-icon notranslate v-theme--dark v-icon--size-default ma-auto" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M18.41,7.41L17,6L11,12L17,18L18.41,16.59L13.83,12L18.41,7.41M12.41,7.41L11,6L5,12L11,18L12.41,16.59L7.83,12L12.41,7.41Z"></path></svg></i></span><!----><!----></button><button data-v-2e845ccd="" type="button" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-flat board-action-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator=""><i data-v-2e845ccd="" class="v-icon notranslate v-theme--dark v-icon--size-default ma-auto" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"></path></svg></i></span><!----><!----></button><button data-v-2e845ccd="" type="button" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-flat board-action-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator=""><i data-v-2e845ccd="" class="v-icon notranslate v-theme--dark v-icon--size-default ma-auto" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path></svg></i></span><!----><!----></button><button data-v-2e845ccd="" type="button" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-flat board-action-button"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator=""><i data-v-2e845ccd="" class="v-icon notranslate v-theme--dark v-icon--size-default ma-auto" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M5.59,7.41L7,6L13,12L7,18L5.59,16.59L10.17,12L5.59,7.41M11.59,7.41L13,6L19,12L13,18L11.59,16.59L16.17,12L11.59,7.41Z"></path></svg></i></span><!----><!----></button></div><div data-v-2e845ccd="" class="control-row-right"><button data-v-18d48a8d="" type="button" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-flat board-action-button" aria-label="Board settings"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator=""><i data-v-18d48a8d="" class="v-icon notranslate v-theme--dark v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"></path></svg></i></span><!----><!----></button><!----><!----></div></div><div class="v-slide-group v-slide-group--mobile v-tabs v-tabs--horizontal v-tabs--align-tabs-start v-tabs--density-default bg-transparent mt-4 tabs-no-scroll" tabindex="-1" role="tablist" data-v-2e845ccd=""><!----><div class="v-slide-group__container"><div class="v-slide-group__content"><button data-v-2e845ccd="" tabindex="0" type="button" class="v-btn v-tab-item--selected v-tab--selected v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text v-tab" role="tab" aria-selected="true" value="analysis"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">Analysis<div class="v-tab__slider"></div></span><!----><!----></button><button data-v-2e845ccd="" tabindex="-1" type="button" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text v-tab" role="tab" aria-selected="false" value="moves"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">Moves<div class="v-tab__slider"></div></span><!----><!----></button><button data-v-2e845ccd="" tabindex="-1" type="button" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text v-tab" role="tab" aria-selected="false" value="games"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">Games<div class="v-tab__slider"></div></span><!----><!----></button><button data-v-2e845ccd="" tabindex="-1" type="button" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text v-tab" role="tab" aria-selected="false" value="nostr"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">Nostr<div class="v-tab__slider"></div></span><!----><!----></button></div></div><!----></div><!----><div data-v-2e845ccd="" class="tab-content"><div data-v-2e845ccd="" class="download-warning mb-3"><span data-v-2e845ccd="">Note: The 40 MB AI model will be downloaded when you first use eval.</span></div><!----><div data-v-2e845ccd="" class="analysis-controls"><div data-v-2e845ccd="" class="v-input v-input--horizontal v-input--center-affix v-input--density-compact v-theme--dark v-locale--is-ltr v-input--dirty v-switch"><!----><div class="v-input__control"><div class="v-selection-control v-selection-control--density-compact"><div class="v-selection-control__wrapper"><div class="v-switch__track"><!----><!----></div><div class="v-selection-control__input"><input id="switch-v-18" aria-disabled="false" aria-label="Analysis" type="checkbox" value="true"><div class="v-switch__thumb"><!----></div></div></div><label class="v-label v-label--clickable" for="switch-v-18"><!---->Analysis</label></div></div><!----><!----></div><div data-v-2e845ccd="" class="v-input v-input--horizontal v-input--center-affix v-input--density-compact v-theme--dark v-locale--is-ltr v-input--dirty v-text-field" style="max-width: 150px;"><!----><div class="v-input__control"><div class="v-field v-field--active v-field--center-affix v-field--dirty v-field--variant-outlined v-theme--dark v-locale--is-ltr"><div class="v-field__overlay"></div><div class="v-field__loader"><div class="v-progress-linear v-theme--dark v-locale--is-ltr" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;"><!----><div class="v-progress-linear__background"></div><div class="v-progress-linear__buffer" style="width: 0%;"></div><div class="v-progress-linear__indeterminate"><div class="v-progress-linear__indeterminate long"></div><div class="v-progress-linear__indeterminate short"></div></div><!----></div></div><!----><div class="v-field__field" data-no-activator=""><!----><label class="v-label v-field-label" for="input-v-22"><!---->Max nodes</label><!----><input size="1" type="number" id="input-v-22" min="100" max="100000" step="1000" class="v-field__input" value="1000"><!----></div><!----><!----><div class="v-field__outline"><div class="v-field__outline__start"></div><div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" for="input-v-22" aria-hidden="false"><!---->Max nodes</label></div><div class="v-field__outline__end"></div><!----></div></div></div><!----><!----></div></div><!----></div><div data-v-2e845ccd="" class="tab-content" style="display: none;"><div data-v-2e845ccd="" class="move-history-section"><div data-v-2e845ccd="" class="history-header"><div data-v-2e845ccd="" class="history-label">History:</div><!----></div><div data-v-2e845ccd="" class="move-history-view mt-2"><!----><div data-v-2e845ccd="" class="no-moves">No moves yet</div></div></div></div><div data-v-2e845ccd="" class="tab-content" style="display: none;"><div data-v-2e845ccd="" class="games-info-message">Your last 30 games will be saved here.</div><div data-v-2e845ccd="" class="no-moves">No saved games</div></div><div data-v-2e845ccd="" class="tab-content" style="display: none;"><div data-v-2e845ccd="" class="games-info-message">Your last 30 Nostr games will be saved here.</div><div data-v-2e845ccd="" class="no-moves">No saved Nostr games</div></div></div></main></div></div></div>
+  
+
+</body></html>

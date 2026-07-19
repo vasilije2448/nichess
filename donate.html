@@ -1,0 +1,382 @@
+<!DOCTYPE html><html lang="en"><head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="anonymous">
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap">
+
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="description" content="Support Nichess development. Donate via Patreon, Bitcoin, Ethereum, or Monero.">
+    <meta property="og:title" content="Donate">
+    <meta property="og:description" content="Support Nichess development. Donate via Patreon, Bitcoin, Ethereum, or Monero.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.nichess.org/donate">
+    <meta property="og:image" content="https://www.nichess.org/pwa-512x512.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png" sizes="180x180">
+    <title>Donate</title>
+    <script type="module" crossorigin="" src="/assets/index-BKEKGDls.js"></script>
+    <link rel="stylesheet" crossorigin="" href="/assets/index-CvhIqpyi.css">
+  <link rel="manifest" href="/manifest.webmanifest"><style id="vuetify-theme-stylesheet">:root {
+      color-scheme: dark;
+    }
+    :root {
+      --v-theme-background: 18,18,18;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 33,33,33;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 204,191,214;
+      --v-theme-surface-bright-overlay-multiplier: 2;
+      --v-theme-surface-light: 66,66,66;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 200,200,200;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 0,0,0;
+      --v-theme-primary: 33,150,243;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 39,124,193;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 84,182,178;
+      --v-theme-secondary-overlay-multiplier: 2;
+      --v-theme-secondary-darken-1: 72,169,166;
+      --v-theme-secondary-darken-1-overlay-multiplier: 2;
+      --v-theme-error: 207,102,121;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 2;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 2;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 2;
+      --v-theme-on-background: 255,255,255;
+      --v-theme-on-surface: 255,255,255;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 255,255,255;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 255, 255, 255;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 1;
+      --v-medium-emphasis-opacity: 0.7;
+      --v-disabled-opacity: 0.5;
+      --v-idle-opacity: 0.1;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.16;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 66, 66, 66;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 52, 52, 52;
+      --v-theme-on-code: 204, 204, 204;
+    }
+    .v-theme--light {
+      color-scheme: normal;
+      --v-theme-background: 255,255,255;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 255,255,255;
+      --v-theme-surface-bright-overlay-multiplier: 1;
+      --v-theme-surface-light: 238,238,238;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 24,103,192;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 31,85,146;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 72,169,166;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 176,0,32;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 238, 238, 238;
+      --v-theme-on-kbd: 0, 0, 0;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+    }
+    .v-theme--dark {
+      color-scheme: dark;
+      --v-theme-background: 18,18,18;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 33,33,33;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 204,191,214;
+      --v-theme-surface-bright-overlay-multiplier: 2;
+      --v-theme-surface-light: 66,66,66;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 200,200,200;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 0,0,0;
+      --v-theme-primary: 33,150,243;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 39,124,193;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 84,182,178;
+      --v-theme-secondary-overlay-multiplier: 2;
+      --v-theme-secondary-darken-1: 72,169,166;
+      --v-theme-secondary-darken-1-overlay-multiplier: 2;
+      --v-theme-error: 207,102,121;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 2;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 2;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 2;
+      --v-theme-on-background: 255,255,255;
+      --v-theme-on-surface: 255,255,255;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 255,255,255;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 255, 255, 255;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 1;
+      --v-medium-emphasis-opacity: 0.7;
+      --v-disabled-opacity: 0.5;
+      --v-idle-opacity: 0.1;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.16;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 66, 66, 66;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 52, 52, 52;
+      --v-theme-on-code: 204, 204, 204;
+    }
+    .bg-background {
+      --v-theme-overlay-multiplier: var(--v-theme-background-overlay-multiplier);
+      background-color: rgb(var(--v-theme-background)) !important;
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .bg-surface {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface)) !important;
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .bg-surface-bright {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-bright-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-bright)) !important;
+      color: rgb(var(--v-theme-on-surface-bright)) !important;
+    }
+    .bg-surface-light {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-light-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-light)) !important;
+      color: rgb(var(--v-theme-on-surface-light)) !important;
+    }
+    .bg-surface-variant {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-variant-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-variant)) !important;
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .bg-primary {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary)) !important;
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .bg-primary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .bg-secondary {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary)) !important;
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .bg-secondary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .bg-error {
+      --v-theme-overlay-multiplier: var(--v-theme-error-overlay-multiplier);
+      background-color: rgb(var(--v-theme-error)) !important;
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .bg-info {
+      --v-theme-overlay-multiplier: var(--v-theme-info-overlay-multiplier);
+      background-color: rgb(var(--v-theme-info)) !important;
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .bg-success {
+      --v-theme-overlay-multiplier: var(--v-theme-success-overlay-multiplier);
+      background-color: rgb(var(--v-theme-success)) !important;
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .bg-warning {
+      --v-theme-overlay-multiplier: var(--v-theme-warning-overlay-multiplier);
+      background-color: rgb(var(--v-theme-warning)) !important;
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+    .text-background {
+      color: rgb(var(--v-theme-background)) !important;
+    }
+    .border-background {
+      --v-border-color: var(--v-theme-background);
+    }
+    .text-surface {
+      color: rgb(var(--v-theme-surface)) !important;
+    }
+    .border-surface {
+      --v-border-color: var(--v-theme-surface);
+    }
+    .text-surface-bright {
+      color: rgb(var(--v-theme-surface-bright)) !important;
+    }
+    .border-surface-bright {
+      --v-border-color: var(--v-theme-surface-bright);
+    }
+    .text-surface-light {
+      color: rgb(var(--v-theme-surface-light)) !important;
+    }
+    .border-surface-light {
+      --v-border-color: var(--v-theme-surface-light);
+    }
+    .text-surface-variant {
+      color: rgb(var(--v-theme-surface-variant)) !important;
+    }
+    .border-surface-variant {
+      --v-border-color: var(--v-theme-surface-variant);
+    }
+    .on-surface-variant {
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .text-primary {
+      color: rgb(var(--v-theme-primary)) !important;
+    }
+    .border-primary {
+      --v-border-color: var(--v-theme-primary);
+    }
+    .text-primary-darken-1 {
+      color: rgb(var(--v-theme-primary-darken-1)) !important;
+    }
+    .border-primary-darken-1 {
+      --v-border-color: var(--v-theme-primary-darken-1);
+    }
+    .text-secondary {
+      color: rgb(var(--v-theme-secondary)) !important;
+    }
+    .border-secondary {
+      --v-border-color: var(--v-theme-secondary);
+    }
+    .text-secondary-darken-1 {
+      color: rgb(var(--v-theme-secondary-darken-1)) !important;
+    }
+    .border-secondary-darken-1 {
+      --v-border-color: var(--v-theme-secondary-darken-1);
+    }
+    .text-error {
+      color: rgb(var(--v-theme-error)) !important;
+    }
+    .border-error {
+      --v-border-color: var(--v-theme-error);
+    }
+    .text-info {
+      color: rgb(var(--v-theme-info)) !important;
+    }
+    .border-info {
+      --v-border-color: var(--v-theme-info);
+    }
+    .text-success {
+      color: rgb(var(--v-theme-success)) !important;
+    }
+    .border-success {
+      --v-border-color: var(--v-theme-success);
+    }
+    .text-warning {
+      color: rgb(var(--v-theme-warning)) !important;
+    }
+    .border-warning {
+      --v-border-color: var(--v-theme-warning);
+    }
+    .on-background {
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .on-surface {
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .on-surface-bright {
+      color: rgb(var(--v-theme-on-surface-bright)) !important;
+    }
+    .on-surface-light {
+      color: rgb(var(--v-theme-on-surface-light)) !important;
+    }
+    .on-primary {
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .on-primary-darken-1 {
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .on-secondary {
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .on-secondary-darken-1 {
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .on-error {
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .on-info {
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .on-success {
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .on-warning {
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+</style><link rel="modulepreload" as="script" crossorigin="" href="/assets/default-1jV0i9B_.js"><link rel="stylesheet" crossorigin="" href="/assets/default-vDqa__t1.css"><link rel="modulepreload" as="script" crossorigin="" href="/assets/donate-CJjaer21.js"><link rel="stylesheet" crossorigin="" href="/assets/donate-CUowrukq.css"><link rel="canonical" href="https://www.nichess.org/donate"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Donate - Nichess"><meta name="twitter:description" content="Support Nichess development. Donate via Patreon, Bitcoin, Ethereum, or Monero."></head>
+  <body>
+    <div id="app" data-v-app=""><div data-v-8d89642c="" class="v-application v-theme--dark v-layout v-layout--full-height v-locale--is-ltr"><div class="v-application__wrap"><header data-v-8d89642c="" class="v-toolbar v-toolbar--density-default bg-transparent elevation-0 v-theme--dark v-locale--is-ltr v-app-bar site-app-bar" app="" style="top: 0px; z-index: 1006; transform: translateY(0px); position: fixed; left: 0px; width: calc(100% + 0px);"><!----><div class="v-toolbar__content" style="height: 64px;"><!----><!----><div data-v-8d89642c="" class="v-container v-locale--is-ltr nav-container d-flex align-center"><button data-v-8d89642c="" type="button" class="v-btn v-btn--icon v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text mobile-menu-button d-sm-none v-app-bar-nav-icon" aria-label="Open navigation"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator=""><i class="v-icon notranslate v-theme--dark v-icon--size-default" aria-hidden="true"><svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path></svg></i></span><!----><!----></button><a data-v-8d89642c="" href="/" class="brand-link">Nichess</a><div data-v-8d89642c="" class="desktop-nav d-none d-sm-flex ml-auto"><button data-v-8d89642c="" type="button" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text nav-link"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">Play</span><!----><!----></button><!----><!----><a data-v-8d89642c="" href="/faq" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text nav-link"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">FAQ</span><!----><!----></a><a data-v-8d89642c="" href="/rules" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text nav-link"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">Rules</span><!----><!----></a><a data-v-8d89642c="" href="/tools" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text nav-link"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">Tools</span><!----><!----></a><a data-v-8d89642c="" href="/nostr" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text nav-link"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">Nostr</span><!----><!----></a><a data-v-8d89642c="" href="/donate" class="v-btn v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-text nav-link donate-link" aria-current="page"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator="">Donate</span><!----><!----></a></div></div><!----></div><!----></header><nav class="v-navigation-drawer v-navigation-drawer--left v-navigation-drawer--temporary v-theme--dark v-navigation-drawer--mobile mobile-drawer d-sm-none" data-v-8d89642c="" style="left: 0px; z-index: 1004; transform: translateX(-256px); position: fixed; height: calc(100% - 64px); top: 64px; bottom: 0px; width: 256px;"><!----><!----><div class="v-navigation-drawer__content"><div data-v-8d89642c="" class="v-list v-theme--dark bg-transparent v-list--density-default v-list--one-line mobile-nav-list" tabindex="0" role="list"><div data-v-8d89642c="" tabindex="-2" class="v-list-item v-list-item--link v-theme--dark v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text mobile-play-item" role="listitem"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!----><div class="v-list-item__content" data-no-activator=""><div class="v-list-item-title">Play</div><!----><!----></div><!----></div><a data-v-8d89642c="" href="/faq" tabindex="-2" class="v-list-item v-list-item--link v-theme--dark v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text mobile-nav-item" role="link"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!----><div class="v-list-item__content" data-no-activator=""><div class="v-list-item-title">FAQ</div><!----><!----></div><!----></a><a data-v-8d89642c="" href="/rules" tabindex="-2" class="v-list-item v-list-item--link v-theme--dark v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text mobile-nav-item" role="link"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!----><div class="v-list-item__content" data-no-activator=""><div class="v-list-item-title">Rules</div><!----><!----></div><!----></a><a data-v-8d89642c="" href="/tools" tabindex="-2" class="v-list-item v-list-item--link v-theme--dark v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text mobile-nav-item" role="link"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!----><div class="v-list-item__content" data-no-activator=""><div class="v-list-item-title">Tools</div><!----><!----></div><!----></a><a data-v-8d89642c="" href="/nostr" tabindex="-2" class="v-list-item v-list-item--link v-theme--dark v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text mobile-nav-item" role="link"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!----><div class="v-list-item__content" data-no-activator=""><div class="v-list-item-title">Nostr</div><!----><!----></div><!----></a><a data-v-8d89642c="" href="/donate" tabindex="-2" class="v-list-item v-list-item--link v-theme--dark v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text mobile-nav-item mobile-donate-item" role="link" aria-current="page"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!----><div class="v-list-item__content" data-no-activator=""><div class="v-list-item-title">Donate</div><!----><!----></div><!----></a></div></div><!----></nav><!----><main data-v-8d89642c="" class="v-main" style="--v-layout-left: 0px; --v-layout-right: 0px; --v-layout-top: 64px; --v-layout-bottom: 0px;"><main data-v-f67850a9="" class="page-shell"><header class="page-header" data-v-f67850a9=""><h1 class="page-title" data-v-f67850a9="">Donate</h1><p class="page-subtitle" data-v-f67850a9="">If you'd like to see a multiplayer server, consider donating.</p></header><section class="panel-grid" aria-label="Donation methods" data-v-f67850a9=""><article class="site-panel" data-v-f67850a9=""><h2 data-v-f67850a9="">Patreon</h2><p data-v-f67850a9=""><a class="site-link" href="https://www.patreon.com/join/nichessgame" data-v-f67850a9="">https://www.patreon.com/join/nichessgame</a></p></article><article class="site-panel donation-panel" data-v-f67850a9=""><h2 data-v-f67850a9="">BTC</h2><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJsAAACbCAYAAAB1YemMAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAA4tJREFUeJzt3VGuYycQRdG8KPOf8ssEaIkItCk7a322un1vy0eIMgX8/P7+/v4Fgb9fvwD/H8JGRtjICBuZf1Z/+PPzU7/HH63ql5P3O/m84l1OTP/ejGxkhI2MsJERNjLLAmGlWGh4NcEtiobbz9g16XszspERNjLCRkbYyGwXCCuTfj3fnYDvTt53368oBnafsevV92ZkIyNsZISNjLCROSoQJrk9UZ+0gvAtjGxkhI2MsJERNjIfWSAULTcnKxK33+VbGNnICBsZYSMjbGSOCoRXE9yTlptXE/qTVYWiHatgZCMjbGSEjYywkdkuED6xHeb2pHz631uZ9L0Z2cgIGxlhIyNsZH6+5R6E25PoSZuUv4WRjYywkRE2MsJGZlkg3J7MTurTL1p4dp+761Vr0wn3IPCUsJERNjLCRmb8MafFxLVow3l1Kdqk05OMbGSEjYywkRE2MkctRpOO85zekz9plaLY52AFgaeEjYywkRE2MssVhFdtOLeLi0mtUsVqS3E06wkjGxlhIyNsZISNzLJAuD0hvT0Bv30PwsntypParG5/b7t2n2tkIyNsZISNjLCRSVqMbv/bSSadYjRpv4YWI54SNjLCRkbYyGy3GK0UR4EWJ/hMd3uF49V+DSMbGWEjI2xkhI3MUYvR7Qn47V+sX91lsOvkGZM2fu8yspERNjLCRkbYyDy7SXlSy82roub2MyYdabpiZCMjbGSEjYywkTk6xegTbwe+/f8oNhCfvMukv2dkIyNsZISNjLCROdqkvPzAR6cYTWr/uf3c226fWKRAYBxhIyNsZISNzPhTjKZPyovC5OS5xQ3OjjllHGEjI2xkhI3MskCY9Gt8cWZ/cXrS7rucfN6JYuXCyEZG2MgIGxlhI3N0itGJSc+YtAl40uZtexD4WMJGRtjICBuZo3sQCsWNxoVXewsmrVIY2cgIGxlhIyNsZLaPOZ20efbVL+Ark26OLj7PHgQ+grCRETYywkZmu0BYub0X4MTuZPZbjnB9tTlaixEfQdjICBsZYSNzVCC8UlxsdlJwFM+9/YyV26seRjYywkZG2MgIG5mPLBBWivakXSeT/NuT8km3RBvZyAgbGWEjI2xkjgqEb26veXWKUXGj8UqxR8LIRkbYyAgbGWEjs10gTD8laKU4wefVr/u7ir0UNikzjrCRETYywkbm6CZl+C+MbGSEjYywkRE2Mv8CeLdBJ3qpCpwAAAAASUVORK5CYII=" alt="Bitcoin donation QR code" class="qr-code small" data-v-f67850a9=""><p class="address-text" data-v-f67850a9=""> bc1qj77tuw0x7llvehwjq5yw3luzeefpu8dmtlgy4r </p></article><article class="site-panel donation-panel" data-v-f67850a9=""><h2 data-v-f67850a9="">ETH</h2><img src="data:image/png;base64,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" alt="Ethereum donation QR code" class="qr-code small" data-v-f67850a9=""><p class="address-text" data-v-f67850a9=""> 0x952838143173312f1F9B9416226A21105604D135 </p></article><article class="site-panel donation-panel" data-v-f67850a9=""><h2 data-v-f67850a9="">XMR</h2><img src="/assets/monero_qr-F_j1C1xL.png" alt="Monero donation QR code" class="qr-code large" data-v-f67850a9=""><p class="address-text" data-v-f67850a9=""> 43HhtcAuDyL5i8ozADfar64yA4NF5XARrMvJeEJWQhEb47JzrEHkDf3fb1mS3Krp3KJwktbvfNtjtf4DM5w963wT6Z1pGnQ </p></article></section></main></main></div></div></div>
+  
+
+</body></html>
